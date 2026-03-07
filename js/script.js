@@ -163,13 +163,19 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
 
             const formData = new FormData(leadForm);
+            const urlEncodedData = new URLSearchParams(formData).toString();
 
             // Webhook mapped to Zapier URL provided
             const scriptURL = 'https://hooks.zapier.com/hooks/catch/26725865/ux4ghwt/';
 
-            fetch(scriptURL, { method: 'POST', body: formData, mode: 'no-cors' })
+            fetch(scriptURL, {
+                method: 'POST',
+                body: urlEncodedData,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            })
                 .then(response => {
-                    // Because no-cors masks response data, assume success
                     formMessage.style.display = 'none';
                     leadForm.reset();
                     submitBtn.innerText = originalBtnText;
@@ -177,13 +183,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Show Modal
                     const modal = document.getElementById('successModal');
-                    modal.classList.add('active');
+                    if (modal) modal.classList.add('active');
                 })
                 .catch(error => {
                     formMessage.textContent = "Oops! Something went wrong. Please try again.";
                     formMessage.className = 'form-message error';
                     formMessage.style.display = 'block';
-                    console.error('Error!', error.message);
+                    console.error('Error!', error);
                     submitBtn.innerText = originalBtnText;
                     submitBtn.disabled = false;
                 });
