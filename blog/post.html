@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Dynamic SEO placeholders -->
+    <title>{{META_TITLE}}</title>
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <meta name="keywords" content="Creative Agency, Marketing Agency, AI Automation Agency, Content Marketing Services, Growth Marketing Services, Motion Matrix Blog">
+    <meta name="author" content="{{AUTHOR}}">
+    
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+    
+    <!-- Open Graph Tags (Facebook / LinkedIn) -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{CANONICAL_URL}}">
+    <meta property="og:title" content="{{META_TITLE}}">
+    <meta property="og:description" content="{{META_DESCRIPTION}}">
+    <meta property="og:image" content="{{FEATURED_IMAGE}}">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{CANONICAL_URL}}">
+    <meta name="twitter:title" content="{{META_TITLE}}">
+    <meta name="twitter:description" content="{{META_DESCRIPTION}}">
+    <meta name="twitter:image" content="{{FEATURED_IMAGE}}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg viewBox='0 0 260 80' xmlns='http://www.w3.org/2000/svg'><g transform='translate(5, 5)'><rect x='0' y='0' width='70' height='70' fill='none' stroke='%23C6FF3D' stroke-width='6'/><rect x='12' y='12' width='46' height='46' fill='%23C6FF3D'/></g></svg>">
+    
+    <!-- CSS (Absolute path reference relative to root) -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GA4_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GA4_MEASUREMENT_ID');
+    </script>
+</head>
+
+<body class="theme-dark">
+    <!-- Brand Header Motif -->
+    <div class="bands">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="/" class="logo" aria-label="Motion Matrix Home">
+                <svg class="logo-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(5, 5)">
+                        <rect x="0" y="0" width="70" height="70" fill="none" stroke="currentColor" stroke-width="6" />
+                        <rect x="12" y="12" width="46" height="46" fill="currentColor" />
+                    </g>
+                    <g font-family="'Anton', sans-serif" font-weight="normal" fill="currentColor">
+                        <text x="90" y="38" font-size="34" letter-spacing="1">MOTION</text>
+                        <text x="90" y="72" font-size="34" letter-spacing="1">MATRIX</text>
+                    </g>
+                </svg>
+            </a>
+            <div class="nav-links">
+                <a href="/#work" class="nav-link">Selected Work</a>
+                <a href="/#services" class="nav-link">Services</a>
+                <a href="/#why-us" class="nav-link">Why Us</a>
+                <a href="/#process" class="nav-link">Process</a>
+                <a href="/blog" class="nav-link">Blog</a>
+                <a href="/#contact" class="btn-premium small">Start a Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Single Page Article -->
+    <article class="blog-post-container">
+        <header class="blog-post-header">
+            <a href="/blog/category/{{CATEGORY_SLUG}}" class="eyebrow">{{CATEGORY_NAME}}</a>
+            <h1 class="blog-post-title">{{TITLE}}</h1>
+            <div class="blog-post-meta-line">
+                <span>By {{AUTHOR}}</span>
+                <span>•</span>
+                <span>{{DATE}}</span>
+            </div>
+        </header>
+
+        <img src="{{FEATURED_IMAGE}}" alt="{{TITLE}}" class="blog-post-hero-image">
+
+        <div class="blog-post-body">
+            {{CONTENT}}
+        </div>
+        
+        <div style="margin-top: 64px; padding-top: 32px; border-top: 2px solid var(--mm-graphite); text-align: center;">
+            <a href="/blog" class="btn-premium">
+                ← Back to all posts
+            </a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-grid-layout">
+                <div class="footer-col footer-brand">
+                    <svg class="logo-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(5, 5)">
+                            <rect x="0" y="0" width="70" height="70" fill="none" stroke="currentColor" stroke-width="6" />
+                            <rect x="12" y="12" width="46" height="46" fill="currentColor" />
+                        </g>
+                        <g font-family="'Anton', sans-serif" font-weight="normal" fill="currentColor">
+                            <text x="90" y="38" font-size="34" letter-spacing="1">MOTION</text>
+                            <text x="90" y="72" font-size="34" letter-spacing="1">MATRIX</text>
+                        </g>
+                    </svg>
+                    <p class="footer-desc">
+                        Loud where it counts. Quiet everywhere else. Built in Kadur, KA.
+                    </p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Direct Contact</h4>
+                    <a href="mailto:hello@motionmatrix.studio">hello@motionmatrix.studio</a>
+                    <a href="tel:+919739690372">+91 9739 690 372</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Social Channels</h4>
+                    <a href="https://wa.me/919739690372" target="_blank">WhatsApp Chat</a>
+                    <a href="https://www.linkedin.com/company/motion-matrix-2/" target="_blank">LinkedIn</a>
+                    <a href="https://www.instagram.com/motionmatrix5/" target="_blank">Instagram</a>
+                    <a href="https://dribbble.com/Chandan_S" target="_blank">Dribbble</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Motion Matrix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

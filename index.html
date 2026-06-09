@@ -4,98 +4,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motion Matrix | Creative Agency</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+    
+    <!-- Title and SEO Meta Tags -->
+    <title>Motion Matrix | Creative Growth & Marketing Agency</title>
+    <meta name="description" content="We help brands scale with results-focused creative growth, performance marketing, content creation, brand systems, and AI-powered automation workflows.">
+    <meta name="keywords" content="Creative Agency, Marketing Agency, AI Automation Agency, Content Marketing Services, Growth Marketing Services, Motion Matrix, Kadur">
+    <meta name="author" content="Motion Matrix">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://motionmatrix.studio/">
+    
+    <!-- Open Graph Tags (Facebook / LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://motionmatrix.studio/">
+    <meta property="og:title" content="Motion Matrix | Results-Focused Creative Growth Agency">
+    <meta property="og:description" content="We help modern brands scale with creative strategy, performance marketing, and AI-powered automated workflows.">
+    <meta property="og:image" content="https://motionmatrix.studio/assets/og-cover.png">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://motionmatrix.studio/">
+    <meta name="twitter:title" content="Motion Matrix | Results-Focused Creative Growth Agency">
+    <meta name="twitter:description" content="We help modern brands scale with creative strategy, performance marketing, and AI-powered automated workflows.">
+    <meta name="twitter:image" content="https://motionmatrix.studio/assets/og-cover.png">
+
+    <!-- Google Search Console Ownership Verification -->
+    <meta name="google-site-verification" content="GSC_VERIFICATION_PLACEHOLDER_KEY">
+    
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml;utf8,<svg viewBox='0 0 260 80' xmlns='http://www.w3.org/2000/svg'><g transform='translate(5, 5)'><rect x='0' y='0' width='70' height='70' fill='none' stroke='%23ffffff' stroke-width='6'/><rect x='12' y='12' width='46' height='46' fill='%23ffffff'/></g></svg>">
-    <!-- Tailwind & Lucide Icons -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg viewBox='0 0 260 80' xmlns='http://www.w3.org/2000/svg'><g transform='translate(5, 5)'><rect x='0' y='0' width='70' height='70' fill='none' stroke='%23C6FF3D' stroke-width='6'/><rect x='12' y='12' width='46' height='46' fill='%23C6FF3D'/></g></svg>">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GA4_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GA4_MEASUREMENT_ID');
+    </script>
+
+    <!-- Local Business Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Motion Matrix",
+      "image": "https://motionmatrix.studio/assets/og-cover.png",
+      "@id": "https://motionmatrix.studio/#organization",
+      "url": "https://motionmatrix.studio/",
+      "telephone": "+919739690372",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kadur",
+        "addressLocality": "Chikkamagaluru",
+        "addressRegion": "KA",
+        "postalCode": "577548",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "13.5564",
+        "longitude": "76.0125"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/motion-matrix-2/",
+        "https://www.instagram.com/motionmatrix5/",
+        "https://dribbble.com/Chandan_S"
+      ]
+    }
+    </script>
 </head>
 
-<body class="bg-black">
+<body class="theme-dark">
+    <!-- Three-Band Brand Header Motif Top of Website -->
+    <div class="bands">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
     <!-- Custom Cursor -->
     <div class="cursor"></div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo" aria-label="Motion Matrix Home">
+            <a href="#" class="logo" aria-label="Motion Matrix Home" id="navLogo">
+                <!-- Signature Logo: Inner and Outer Squares -->
                 <svg class="logo-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
                     <g transform="translate(5, 5)">
                         <rect x="0" y="0" width="70" height="70" fill="none" stroke="currentColor" stroke-width="6" />
                         <rect x="12" y="12" width="46" height="46" fill="currentColor" />
                     </g>
-                    <g font-family="Georgia, serif" font-weight="normal" fill="currentColor">
+                    <g font-family="'Anton', sans-serif" font-weight="normal" fill="currentColor">
                         <text x="90" y="38" font-size="34" letter-spacing="1">MOTION</text>
                         <text x="90" y="72" font-size="34" letter-spacing="1">MATRIX</text>
                     </g>
                 </svg>
             </a>
             <div class="nav-links">
-                <a href="#work" class="nav-link">Work</a>
-                <a href="#expertise" class="nav-link">Expertise</a>
-                <a href="#why-us" class="nav-link">Why Us</a>
-                <a href="#contact" class="btn-primary small">Start a Project</a>
+                <a href="#work" class="nav-link" id="navLinkWork">Selected Work</a>
+                <a href="#services" class="nav-link" id="navLinkServices">Services</a>
+                <a href="#why-us" class="nav-link" id="navLinkWhy">Why Us</a>
+                <a href="#process" class="nav-link" id="navLinkProcess">Process</a>
+                <a href="/blog" class="nav-link" id="navLinkBlog">Blog</a>
+                <a href="#contact" class="btn-premium small" id="navBtnContact">Start a Project</a>
             </div>
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
         </div>
     </nav>
 
     <main>
         <!-- Hero Section -->
         <section class="hero" id="home">
-            <div class="hero-content text-center">
+            <div class="section-container">
+                <div class="hero-content">
+                    <div class="eyebrow">Your Growth Partner</div>
+                    <h1 class="hero-title">
+                        Results-focused<br>creative growth for<br>
+                        <span class="animated-text-wrapper" id="heroTextLoop">
+                            <span class="animated-word">Modern Brands.</span>
+                            <span class="animated-word">Fast Growth.</span>
+                            <span class="animated-word">AI Pipelines.</span>
+                            <span class="animated-word">True ROI.</span>
+                        </span>
+                    </h1>
 
-                <h1 class="hero-title">
-                    <span>Execution Partner for</span>
-                    <br>
-                    <span class="animated-text-wrapper">
-                        <span class="animated-word" style="transform: translateY(-150%); opacity: 0;">Video
-                            Production</span>
-                        <span class="animated-word" style="transform: translateY(-150%); opacity: 0;">Marketing</span>
-                        <span class="animated-word" style="transform: translateY(-150%); opacity: 0;">Digital
-                            Growth</span>
-                        <span class="animated-word" style="transform: translateY(-150%); opacity: 0;">Motion
-                            Graphics</span>
-                        <span class="animated-word" style="transform: translateY(-150%); opacity: 0;">Success</span>
-                    </span>
-                </h1>
+                    <p class="hero-subtitle">
+                        We help brands scale with content, creative strategy, performance marketing, and AI-powered systems.
+                    </p>
 
-                <p class="hero-subtitle text-center mx-auto fade-in">
-                    We help brands grow with high-quality motion, video production, and performance-driven digital
-                    marketing. Avoid further complications by ditching outdated agencies. Our goal is to streamline your
-                    growth.
-                </p>
-
-                <div class="hero-actions justify-center fade-in-up mt-8 flex gap-4">
-                    <a href="#contact" class="btn-shadcn btn-lg group">
-                        Contact Us <i data-lucide="arrow-right"
-                            class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                    <a href="#work" class="btn-shadcn-outline btn-lg group">
-                        View Work <i data-lucide="layout-grid"
-                            class="w-4 h-4 ml-2 group-hover:scale-110 transition-transform"></i>
-                    </a>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn-premium" id="heroCtaCall">
+                            Book a Strategy Call
+                            <!-- Inline Arrow Right SVG -->
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:8px; transition: transform 0.2s;" id="ctaArrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="#work" class="btn-premium-outline" id="heroCtaWork">
+                            See Our Work
+                        </a>
+                    </div>
                 </div>
             </div>
-
-            <!-- Minimal Background element -->
+            <!-- Minimal background glow -->
             <div class="hero-glow"></div>
         </section>
 
         <!-- Client Logo Bar -->
-        <section class="client-logos">
+        <section class="client-logos" id="clientLogos">
             <div class="scroller" data-direction="left" data-speed="slow">
                 <div class="scroller__inner">
-                    <!-- Client Logos -->
                     <h3 class="client-logo">edureka!</h3>
                     <h3 class="client-logo">Isocreates</h3>
                     <h3 class="client-logo">Refyne</h3>
@@ -108,197 +184,266 @@
             </div>
         </section>
 
-        <!-- What We Do -->
-        <section class="expertise" id="expertise">
+        <!-- Selected Work Portfolio -->
+        <section class="portfolio" id="work" style="background-color: var(--mm-paper); color: var(--mm-black);">
             <div class="section-container">
-                <div class="section-header fade-in">
-                    <h2 class="section-title">Core Capabilities</h2>
-                    <p class="section-desc">We combine creativity and strategy to deliver measurable results.</p>
+                <div class="section-header">
+                    <div class="eyebrow" style="color: var(--mm-iron);">Our Portfolio</div>
+                    <h2 class="section-title" style="color: var(--mm-black);">Selected Work</h2>
+                    <p class="section-desc" style="color: var(--mm-iron);">A curation of high-performing campaigns, brand identity overhauls, and explainer assets.</p>
                 </div>
 
-                <div class="capabilities-grid">
-                    <div class="capability-card fade-up">
-                        <div class="card-icon">01</div>
-                        <h3>Digital Marketing</h3>
-                        <p>Data-driven strategies to elevate your brand's digital presence.</p>
-                    </div>
-                    <div class="capability-card fade-up">
-                        <div class="card-icon">02</div>
-                        <h3>Video Production</h3>
-                        <p>Cinematic quality production from concept to final cut.</p>
-                    </div>
-                    <div class="capability-card fade-up">
-                        <div class="card-icon">03</div>
-                        <h3>Motion & Explainer Videos</h3>
-                        <p>Engaging animations that simplify complex ideas.</p>
-                    </div>
-                    <div class="capability-card fade-up">
-                        <div class="card-icon">04</div>
-                        <h3>Performance Marketing</h3>
-                        <p>ROI-focused campaigns that drive conversions.</p>
-                    </div>
-                    <div class="capability-card fade-up">
-                        <div class="card-icon">05</div>
-                        <h3>Video Marketing</h3>
-                        <p>Strategic distribution of video content for maximum impact.</p>
-                    </div>
-                    <div class="capability-card fade-up">
-                        <div class="card-icon">06</div>
-                        <h3>Web Development</h3>
-                        <p>High-end, performance-optimized websites and landing pages.</p>
-                    </div>
+                <!-- Dynamic Portfolio Loader -->
+                <div id="portfolioLoading" style="text-align: center; padding: 40px 0; font-family: var(--font-mono); color: var(--mm-iron);">
+                    Loading client portfolio...
+                </div>
+                <div class="grid grid-2 gap-8" id="portfolioGrid" style="display: none;">
+                    <!-- Dynamically populated via script.js -->
                 </div>
             </div>
         </section>
 
-        <!-- Portfolio Section -->
-        <section class="portfolio" id="work">
+        <!-- Services Section -->
+        <section class="services theme-dark" id="services">
             <div class="section-container">
-                <div class="section-header fade-in">
-                    <h2 class="section-title">Selected Work</h2>
+                <div class="section-header">
+                    <div class="eyebrow">Our Expertise</div>
+                    <h2 class="section-title">Capabilities</h2>
+                    <p class="section-desc">We build digital-first growth products and marketing programs designed to convert.</p>
                 </div>
 
-                <div class="portfolio-grid">
-                    <article class="portfolio-card fade-up">
-                        <div class="portfolio-img-wrapper">
-                            <img src="assets/portfolio-explainer.png" alt="Explainer Video" class="portfolio-img">
-                            <a href="https://dribbble.com/shots/26396711-Explainer-Videofolio" target="_blank"
-                                class="hover-btn">View Portfolio</a>
-                        </div>
-                        <div class="portfolio-info">
-                            <span class="portfolio-category">Explainer Videos</span>
-                            <h3 class="portfolio-title">Simplifying Complexity</h3>
-                        </div>
-                    </article>
+                <div class="grid grid-3 gap-6">
+                    <div class="premium-card" id="service1">
+                        <span class="service-num">01 / CAPABILITY</span>
+                        <h3>Content Creation</h3>
+                        <p>High-end explainer videos, brand media assets, and podcast production that capture attention instantly.</p>
+                    </div>
 
-                    <article class="portfolio-card fade-up">
-                        <div class="portfolio-img-wrapper">
-                            <img src="assets/portfolio-testimonial.png" alt="Testimonial Video" class="portfolio-img">
-                            <a href="https://dribbble.com/shots/26396561-Testimonial-Video-Series" target="_blank"
-                                class="hover-btn">View Portfolio</a>
-                        </div>
-                        <div class="portfolio-info">
-                            <span class="portfolio-category">Testimonial Videos</span>
-                            <h3 class="portfolio-title">Authentic Stories</h3>
-                        </div>
-                    </article>
+                    <div class="premium-card" id="service2">
+                        <span class="service-num">02 / CAPABILITY</span>
+                        <h3>Performance Marketing</h3>
+                        <p>Paid media campaigns that drive conversions, scale traffic volumes, and prove clear, measurable ROI.</p>
+                    </div>
 
-                    <article class="portfolio-card fade-up">
-                        <div class="portfolio-img-wrapper">
-                            <img src="assets/portfolio-podcast.png" alt="Podcast Production" class="portfolio-img">
-                            <a href="https://dribbble.com/shots/26396458-Refyne-Podcast" target="_blank"
-                                class="hover-btn">View Portfolio</a>
-                        </div>
-                        <div class="portfolio-info">
-                            <span class="portfolio-category">Podcast Production</span>
-                            <h3 class="portfolio-title">Audio & Visual Excellence</h3>
-                        </div>
-                    </article>
+                    <div class="premium-card" id="service3">
+                        <span class="service-num">03 / CAPABILITY</span>
+                        <h3>AI Automation</h3>
+                        <p>Bespoke software automation systems that optimize content pipelines and streamline daily operations.</p>
+                    </div>
 
-                    <article class="portfolio-card fade-up">
-                        <div class="portfolio-img-wrapper">
-                            <img src="assets/portfolio-creative.png" alt="Marketing Creatives" class="portfolio-img">
-                            <a href="https://dribbble.com/shots/26396432-Refyne-Graphic-Visual-Design-for-Marketing-Collaterals"
-                                target="_blank" class="hover-btn">View Portfolio</a>
-                        </div>
-                        <div class="portfolio-info">
-                            <span class="portfolio-category">Marketing Creatives</span>
-                            <h3 class="portfolio-title">Campaign Assets</h3>
-                        </div>
-                    </article>
+                    <div class="premium-card" id="service4">
+                        <span class="service-num">04 / CAPABILITY</span>
+                        <h3>Brand Growth Systems</h3>
+                        <p>Complete scale frameworks, funnel architectures, and brand design guidelines tailored for growth.</p>
+                    </div>
 
-                    <article class="portfolio-card fade-up">
-                        <div class="portfolio-img-wrapper">
-                            <img src="assets/portfolio-performance.png" alt="Performance Marketing"
-                                class="portfolio-img">
-                            <a href="https://dribbble.com/shots/26396658-Performance-Ad-Portfolio" target="_blank"
-                                class="hover-btn">View Portfolio</a>
-                        </div>
-                        <div class="portfolio-info">
-                            <span class="portfolio-category">Performance Marketing Campaigns</span>
-                            <h3 class="portfolio-title">Conversion Drivers</h3>
-                        </div>
-                    </article>
+                    <div class="premium-card" id="service5">
+                        <span class="service-num">05 / CAPABILITY</span>
+                        <h3>Creative Strategy</h3>
+                        <p>Core identity design, copywriting, and market positioning that elevates agencies above the noise.</p>
+                    </div>
+
+                    <div class="premium-card" id="service6" style="border-style: dashed;">
+                        <span class="service-num" style="color:var(--mm-steel);">06 / NEXT</span>
+                        <h3 style="color:var(--mm-steel);">Your Project</h3>
+                        <p style="color:var(--mm-steel);">Partner with us to engineer high-velocity digital marketing and custom automations.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Why Us Section -->
-        <section class="why-us" id="why-us">
+        <section class="why-us theme-light" id="why-us" style="background-color: var(--mm-paper); color: var(--mm-black);">
             <div class="section-container">
-                <div class="why-grid">
-                    <div class="why-content fade-in">
-                        <h2 class="section-title">Why Motion Matrix</h2>
-                        <p class="section-desc">We aren't just an agency. We are your execution partner.</p>
+                <div class="grid grid-2 gap-12">
+                    <div class="why-intro">
+                        <div class="eyebrow" style="color: var(--mm-iron);">Why Motion Matrix</div>
+                        <h2 class="section-title" style="color: var(--mm-black);">Loud where it counts. Quiet everywhere else.</h2>
+                        <p class="section-desc" style="color: var(--mm-iron);">We operate behind the scenes as your dedicated growth and systems team. No bloated account layers. Just clean math and fast execution.</p>
                     </div>
-                    <div class="features-list">
-                        <div class="feature-block fade-up">
-                            <h4>Reliable Execution</h4>
-                            <p>We deliver what we promise, handling complexity behind the scenes.</p>
+
+                    <div class="why-features">
+                        <div class="feature-block" id="whyFeature1">
+                            <h4 style="color: var(--mm-black);">Faster Execution</h4>
+                            <p style="color: var(--mm-iron);">We ship in two weeks. Our design system keeps components simple and focused, eliminating bloated cycles.</p>
                         </div>
-                        <div class="feature-block fade-up">
-                            <h4>On-time Delivery</h4>
-                            <p>Speed without compromising the premium quality you expect.</p>
+                        <div class="feature-block" id="whyFeature2">
+                            <h4 style="color: var(--mm-black);">AI-Powered Workflows</h4>
+                            <p style="color: var(--mm-iron);">We integrate custom automations into your marketing pipeline to scale asset variations with minimal human effort.</p>
                         </div>
-                        <div class="feature-block fade-up">
-                            <h4>High Production Quality</h4>
-                            <p>Cinematic standards across every asset we create.</p>
+                        <div class="feature-block" id="whyFeature3">
+                            <h4 style="color: var(--mm-black);">Performance-Driven Decisions</h4>
+                            <p style="color: var(--mm-iron);">Every layout choice, font weight, and campaign structure is informed by conversion optimization and testing.</p>
                         </div>
-                        <div class="feature-block fade-up">
-                            <h4>Marketing-driven Content</h4>
-                            <p>Beautiful art that actually converts and drives business goals.</p>
+                        <div class="feature-block" id="whyFeature4">
+                            <h4 style="color: var(--mm-black);">Founder-Led Service</h4>
+                            <p style="color: var(--mm-iron);">Direct alignment with creative director Chandan S. You talk directly with the designers and builders shipping the work.</p>
                         </div>
-                        <div class="feature-block fade-up">
-                            <h4>Single Point of Contact</h4>
-                            <p>Streamlined communication for a hassle-free experience.</p>
+                        <div class="feature-block" id="whyFeature5">
+                            <h4 style="color: var(--mm-black);">Clear ROI</h4>
+                            <p style="color: var(--mm-iron);">No vanity metrics. We track click rates, form submissions, and database leads to measure growth clearly.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="contact" id="contact">
+        <!-- Process Section -->
+        <section class="process theme-dark" id="process">
             <div class="section-container">
-                <div class="contact-grid">
-                    <div class="contact-info fade-in">
-                        <h2 class="section-title">Let's Create<br>Something<br><span
-                                class="golden-text">Incredible.</span></h2>
-                        <p class="contact-sub">Reach out to discuss your next big project.</p>
-                        <div id="formMessage" class="form-message" style="display: none;"></div>
+                <div class="section-header text-center mx-auto">
+                    <div class="eyebrow">Our Methodology</div>
+                    <h2 class="section-title">The Process</h2>
+                    <p class="section-desc mx-auto">Five structured steps that take campaigns from initial research to fully optimized scale.</p>
+                </div>
+
+                <div class="process-timeline">
+                    <div class="process-step" id="stepDiscover">
+                        <span class="step-num">STEP 01</span>
+                        <h4>Discover</h4>
+                        <p>We audit your current tech, review product constraints, and map conversion gaps.</p>
                     </div>
-                    <div class="contact-form fade-in">
+                    <div class="process-step" id="stepStrategize">
+                        <span class="step-num">STEP 02</span>
+                        <h4>Strategize</h4>
+                        <p>We design custom visual directions, define the funnel, and configure database metrics.</p>
+                    </div>
+                    <div class="process-step" id="stepCreate">
+                        <span class="step-num">STEP 03</span>
+                        <h4>Create</h4>
+                        <p>We build production-ready copy, write components, and deploy automation scripts.</p>
+                    </div>
+                    <div class="process-step" id="stepLaunch">
+                        <span class="step-num">STEP 04</span>
+                        <h4>Launch</h4>
+                        <p>We ship elements live, run sitemap indexation, and activate lead listeners.</p>
+                    </div>
+                    <div class="process-step" id="stepScale">
+                        <span class="step-num">STEP 05</span>
+                        <h4>Scale</h4>
+                        <p>We analyze GA4 behaviors, review Search Console inputs, and scale budgets.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials theme-dark" id="testimonials" style="border-top: 2px solid var(--mm-graphite);">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="eyebrow">Social Proof</div>
+                    <h2 class="section-title">Client Stories</h2>
+                    <p class="section-desc">How we help agencies and digital product brands scale their operations.</p>
+                </div>
+
+                <div class="grid grid-2 gap-8">
+                    <div class="testimonial-card" id="testi1">
+                        <p class="testimonial-quote">
+                            "Motion Matrix transformed our creative delivery pipeline. Their AI automations saved our designers hours of manual configuration and the brand guidelines refresh gave us massive conversion jumps."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop');"></div>
+                            <div class="author-meta">
+                                <h5>Sarah K.</h5>
+                                <span>Marketing Director, Refyne</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" id="testi2">
+                        <p class="testimonial-quote">
+                            "Direct access to founder-led implementation is a game-changer. They built our website, configured our lead funnel database in Supabase, and our performance ad clicks scaled by 40% in two weeks."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop');"></div>
+                            <div class="author-meta">
+                                <h5>Alex D.</h5>
+                                <span>Co-Founder, Solv App</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Lead capture Section -->
+        <section class="contact theme-dark" id="contact" style="border-top: 2px solid var(--mm-graphite);">
+            <div class="section-container">
+                <div class="contact-grid-layout">
+                    <div class="contact-info" id="contactInfoArea">
+                        <div class="eyebrow">Get In Touch</div>
+                        <h2 class="section-title" style="font-size: clamp(2.5rem, 5vw, 3.8rem); line-height: 1.0;">
+                            Let's Create<br>Something<br><span class="marker-highlight">Incredible.</span>
+                        </h2>
+                        <p class="section-desc" style="margin-top: 24px;">
+                            Fill out the inquiry form to book a discovery call. Or pick a time directly on our scheduling calendar.
+                        </p>
+                        
+                        <!-- Contact Info List -->
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <span class="contact-info-label">Studio Base</span>
+                                <span class="contact-info-value">Kadur, Chikkamagaluru, KA 577548</span>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-info-label">Email</span>
+                                <span class="contact-info-value"><a href="mailto:hello@motionmatrix.studio">hello@motionmatrix.studio</a></span>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-info-label">Phone</span>
+                                <span class="contact-info-value"><a href="tel:+919739690372">+91 9739 690 372</a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lead Form & Calendar Box -->
+                    <div class="lead-form-box" id="formWrapper">
                         <form id="leadForm">
                             <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" class="form-input" required placeholder="e.g. John Doe">
                             </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                                <input type="email" id="email" name="email" class="form-input" required placeholder="e.g. john@company.com">
                             </div>
+
                             <div class="form-group">
-                                <label for="service">What service are you looking for?</label>
-                                <select id="service" name="service" required>
+                                <label for="company">Company / Brand Name</label>
+                                <input type="text" id="company" name="company" class="form-input" placeholder="e.g. Acme Corp">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="e.g. +91 98765 43210">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service">Select Capability</label>
+                                <select id="service" name="service" class="form-input" style="background-color: var(--mm-black); color: var(--mm-white);" required>
                                     <option value="" disabled selected>Select a service...</option>
-                                    <option value="Video Production">Video Production</option>
-                                    <option value="Motion Graphics">Motion & Explainer Videos</option>
-                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Content Creation">Content Creation</option>
                                     <option value="Performance Marketing">Performance Marketing</option>
-                                    <option value="Web Development">Web Development</option>
-                                    <option value="Other">Other</option>
+                                    <option value="AI Automation">AI Automation</option>
+                                    <option value="Brand Growth Systems">Brand Growth Systems</option>
+                                    <option value="Creative Strategy">Creative Strategy</option>
+                                    <option value="Other Project">Other / Custom Collaboration</option>
                                 </select>
                             </div>
+
                             <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="4" required
-                                    placeholder="Tell us about your project..."></textarea>
+                                <label for="message">Project Description</label>
+                                <textarea id="message" name="message" class="form-input" rows="4" required placeholder="Tell us about your objectives and timelines..."></textarea>
                             </div>
-                            <button type="submit" class="btn-primary w-100" id="submitBtn">Submit Inquiry</button>
+
+                            <!-- Hidden field for tracking lead source -->
+                            <input type="hidden" name="source" value="homepage_inquiry">
+
+                            <button type="submit" class="btn-premium w-full" id="submitBtn">
+                                Submit Inquiry
+                            </button>
+                            <div id="formMessage" class="form-message" style="display: none;"></div>
                         </form>
                     </div>
                 </div>
@@ -309,61 +454,62 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="section-container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" aria-label="Motion Matrix Home">
-                        <svg class="logo-svg footer-logo" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
-                            <g transform="translate(5, 5)">
-                                <rect x="0" y="0" width="70" height="70" fill="none" stroke="currentColor"
-                                    stroke-width="6" />
-                                <rect x="12" y="12" width="46" height="46" fill="currentColor" />
-                            </g>
-                            <g font-family="Georgia, serif" font-weight="normal" fill="currentColor">
-                                <text x="90" y="38" font-size="34" letter-spacing="1">MOTION</text>
-                                <text x="90" y="72" font-size="34" letter-spacing="1">MATRIX</text>
-                            </g>
-                        </svg>
-                    </a>
-                    <p class="footer-desc">Your execution partner for premium video, marketing, and digital growth.</p>
+            <div class="footer-grid-layout">
+                <div class="footer-col footer-brand">
+                    <svg class="logo-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(5, 5)">
+                            <rect x="0" y="0" width="70" height="70" fill="none" stroke="currentColor" stroke-width="6" />
+                            <rect x="12" y="12" width="46" height="46" fill="currentColor" />
+                        </g>
+                        <g font-family="'Anton', sans-serif" font-weight="normal" fill="currentColor">
+                            <text x="90" y="38" font-size="34" letter-spacing="1">MOTION</text>
+                            <text x="90" y="72" font-size="34" letter-spacing="1">MATRIX</text>
+                        </g>
+                    </svg>
+                    <p class="footer-desc">
+                        Loud where it counts. Quiet everywhere else. Built in Kadur, serving premium brands globally.
+                    </p>
                 </div>
-                <div class="footer-links">
-                    <h4>Contact</h4>
-                    <a href="mailto:Chandan@motionmatrix.studio">Chandan@motionmatrix.studio</a>
-                    <a href="tel:+919739690372">+91 9739690372</a>
+                
+                <div class="footer-col">
+                    <h4>Direct Contact</h4>
+                    <a href="mailto:hello@motionmatrix.studio" id="footerEmail">hello@motionmatrix.studio</a>
+                    <a href="tel:+919739690372" id="footerPhone">+91 9739 690 372</a>
                 </div>
-                <div class="footer-social">
-                    <h4>Social</h4>
-                    <a href="https://wa.me/919739690372" target="_blank">WhatsApp</a>
-                    <a href="https://www.linkedin.com/company/motion-matrix-2/?viewAsMember=true"
-                        target="_blank">LinkedIn</a>
-                    <a href="https://www.instagram.com/motionmatrix5/" target="_blank">Instagram</a>
-                    <a href="https://dribbble.com/Chandan_S" target="_blank">Dribbble</a>
+
+                <div class="footer-col">
+                    <h4>Social Channels</h4>
+                    <a href="https://wa.me/919739690372" target="_blank" id="socialWhatsapp">WhatsApp Chat</a>
+                    <a href="https://www.linkedin.com/company/motion-matrix-2/" target="_blank" id="socialLinkedin">LinkedIn</a>
+                    <a href="https://www.instagram.com/motionmatrix5/" target="_blank" id="socialInsta">Instagram</a>
+                    <a href="https://dribbble.com/Chandan_S" target="_blank" id="socialDribbble">Dribbble</a>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2024 Motion Matrix. All rights reserved.</p>
+                <p>&copy; 2026 Motion Matrix. All rights reserved.</p>
+                <div style="display: flex; gap: 16px;">
+                    <a href="/sitemap.xml" style="color: var(--mm-steel);">Sitemap</a>
+                    <a href="/robots.txt" style="color: var(--mm-steel);">Robots</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Success Modal -->
+    <!-- Success Modal Overlay -->
     <div id="successModal" class="modal-overlay">
         <div class="modal-content">
-            <h3 class="modal-title">Thank You!</h3>
-            <p class="modal-message">Thank you for submitting your request.<br>Our team will review your message and get
-                back to you shortly.</p>
-            <p class="modal-footer-msg">Thanks for choosing Motion Matrix.</p>
-            <button id="closeModalBtn" class="btn-shadcn">Back to Website</button>
+            <h3 class="modal-title">Thank You</h3>
+            <p class="modal-message">We have received your lead inquiry successfully. Chandan S will review your project details and reach out within 24 hours.</p>
+            <p class="modal-footer-msg">Your digital execution partner.</p>
+            <button id="closeModalBtn" class="btn-premium w-full">Back to Website</button>
         </div>
     </div>
 
-    <!-- GSAP for Animations -->
+    <!-- GSAP for Smooth Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-    </script>
+    
     <!-- Main JS -->
     <script src="js/script.js"></script>
 </body>

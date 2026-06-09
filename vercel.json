@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/author/:author",
+      "destination": "/blog/author.html"
+    },
+    {
+      "source": "/blog/category/:category",
+      "destination": "/blog/category.html"
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/api/blog-post"
+    }
+  ]
+}

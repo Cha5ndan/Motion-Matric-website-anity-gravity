@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Motion Matrix Blog | Author Archive</title>
+    <meta name="description" content="Browse blog posts published by our creative team and operators. Professional strategy from Motion Matrix.">
+    
+    <link rel="canonical" href="https://motionmatrix.studio/blog">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://motionmatrix.studio/blog">
+    <meta property="og:title" content="Motion Matrix Blog | Author Archive">
+    <meta property="og:description" content="Browse blog posts published by our creative team and operators. Professional strategy from Motion Matrix.">
+    <meta property="og:image" content="https://motionmatrix.studio/assets/og-cover.png">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://motionmatrix.studio/blog">
+    <meta name="twitter:title" content="Motion Matrix Blog | Author Archive">
+    <meta name="twitter:description" content="Browse blog posts published by our creative team and operators. Professional strategy from Motion Matrix.">
+    <meta name="twitter:image" content="https://motionmatrix.studio/assets/og-cover.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GA4_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GA4_MEASUREMENT_ID');
+    </script>
+</head>
+
+<body class="theme-dark">
+    <!-- Brand Header Motif -->
+    <div class="bands">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="/" class="logo" aria-label="Motion Matrix Home">
+                <svg class="logo-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(5, 5)">
+                        <rect x="0" y="0" width="70" height="70" fill="none" stroke="currentColor" stroke-width="6" />
+                        <rect x="12" y="12" width="46" height="46" fill="currentColor" />
+                    </g>
+                    <g font-family="'Anton', sans-serif" font-weight="normal" fill="currentColor">
+                        <text x="90" y="38" font-size="34" letter-spacing="1">MOTION</text>
+                        <text x="90" y="72" font-size="34" letter-spacing="1">MATRIX</text>
+                    </g>
+                </svg>
+            </a>
+            <div class="nav-links">
+                <a href="/#work" class="nav-link">Selected Work</a>
+                <a href="/#services" class="nav-link">Services</a>
+                <a href="/#why-us" class="nav-link">Why Us</a>
+                <a href="/#process" class="nav-link">Process</a>
+                <a href="/blog" class="nav-link">Blog</a>
+                <a href="/#contact" class="btn-premium small">Start a Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Author Header -->
+    <header class="blog-header">
+        <div class="section-container">
+            <div class="eyebrow" id="archiveType">Author Archive</div>
+            <h1 class="section-title" id="authorName">Author Name</h1>
+            <p class="section-desc">Articles, operational insights, and creative strategies published by this author.</p>
+        </div>
+    </header>
+
+    <!-- Main Blog Grid Section -->
+    <section class="blog-section" style="padding-top: 40px; min-height: 40vh;">
+        <div class="section-container">
+            <div style="margin-bottom: 24px;">
+                <a href="/blog" class="eyebrow" style="color: var(--mm-neon); border-bottom: 1px solid var(--mm-neon); padding-bottom: 2px;">← View all articles</a>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="blogLoading" class="text-center" style="padding: var(--space-lg) 0;">
+                <p style="font-family: var(--font-mono); color: var(--mm-steel);">Querying author posts...</p>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid" id="blogGrid" style="display: none;">
+                <!-- Blog cards will inject dynamically here -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="blogEmpty" class="text-center" style="display: none; padding: var(--space-lg) 0;">
+                <p style="font-family: var(--font-mono); color: var(--mm-steel);">No articles found for this author.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-grid-layout">
+                <div class="footer-col footer-brand">
+                    <svg class="logo-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(5, 5)">
+                            <rect x="0" y="0" width="70" height="70" fill="none" stroke="currentColor" stroke-width="6" />
+                            <rect x="12" y="12" width="46" height="46" fill="currentColor" />
+                        </g>
+                        <g font-family="'Anton', sans-serif" font-weight="normal" fill="currentColor">
+                            <text x="90" y="38" font-size="34" letter-spacing="1">MOTION</text>
+                            <text x="90" y="72" font-size="34" letter-spacing="1">MATRIX</text>
+                        </g>
+                    </svg>
+                    <p class="footer-desc">
+                        Loud where it counts. Quiet everywhere else. Built in Kadur, KA.
+                    </p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Direct Contact</h4>
+                    <a href="mailto:hello@motionmatrix.studio">hello@motionmatrix.studio</a>
+                    <a href="tel:+919739690372">+91 9739 690 372</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Social Channels</h4>
+                    <a href="https://wa.me/919739690372" target="_blank">WhatsApp Chat</a>
+                    <a href="https://www.linkedin.com/company/motion-matrix-2/" target="_blank">LinkedIn</a>
+                    <a href="https://www.instagram.com/motionmatrix5/" target="_blank">Instagram</a>
+                    <a href="https://dribbble.com/Chandan_S" target="_blank">Dribbble</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Motion Matrix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase JS Library from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const loadingEl = document.getElementById('blogLoading');
+            const gridEl = document.getElementById('blogGrid');
+            const emptyEl = document.getElementById('blogEmpty');
+            const authorHeaderName = document.getElementById('authorName');
+            
+            // Extract author slug/name from clean URL pathname: /blog/author/some-author
+            const pathParts = window.location.pathname.split('/');
+            const authorSlug = pathParts[pathParts.length - 1] || '';
+            const decodedAuthor = decodeURIComponent(authorSlug).replace(/-/g, ' ');
+
+            authorHeaderName.textContent = decodedAuthor;
+            document.title = `Articles by ${decodedAuthor} | Motion Matrix Blog`;
+
+            try {
+                // Fetch public Supabase configuration from Serverless Function
+                const configRes = await fetch('/api/config');
+                const config = await configRes.json();
+
+                if (!config.supabaseUrl || !config.supabaseAnonKey) {
+                    throw new Error("Supabase credentials could not be loaded.");
+                }
+
+                // Initialize client
+                const supabase = window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey);
+
+                // Fetch posts matching the decoded author name case-insensitively
+                const { data: posts, error: postErr } = await supabase
+                    .from('blog_posts')
+                    .select('*, categories(name, slug)')
+                    .ilike('author_name', decodedAuthor)
+                    .order('published_at', { ascending: false });
+
+                if (postErr) throw postErr;
+
+                loadingEl.style.display = 'none';
+
+                if (!posts || posts.length === 0) {
+                    emptyEl.style.display = 'block';
+                } else {
+                    gridEl.style.display = 'grid';
+                    renderPosts(posts);
+                }
+
+            } catch (err) {
+                console.error("Failed to load author posts:", err);
+                loadingEl.innerHTML = `<p style="color: #ff5252; font-family: var(--font-mono);">Error querying author database: ${err.message}</p>`;
+            }
+
+            function renderPosts(posts) {
+                gridEl.innerHTML = '';
+                posts.forEach(post => {
+                    const card = document.createElement('a');
+                    card.href = `/blog/${post.slug}`;
+                    card.className = 'blog-card';
+
+                    const publishDate = new Date(post.published_at || post.created_at).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                    });
+
+                    const categoryName = post.categories ? post.categories.name : 'Uncategorized';
+                    const featuredImg = post.featured_image || 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop';
+                    
+                    const div = document.createElement('div');
+                    div.innerHTML = post.content;
+                    const text = div.textContent || div.innerText || '';
+                    const excerpt = post.meta_description || (text.substring(0, 110) + '...');
+
+                    card.innerHTML = `
+                        <div class="blog-card-img-wrapper">
+                            <img src="${featuredImg}" alt="${post.title}" class="blog-card-img" loading="lazy">
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span>${categoryName}</span>
+                                <span>${publishDate}</span>
+                            </div>
+                            <h3 class="blog-card-title">${post.title}</h3>
+                            <p class="blog-card-excerpt">${excerpt}</p>
+                            <div class="blog-card-author">By ${post.author_name}</div>
+                        </div>
+                    `;
+
+                    gridEl.appendChild(card);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

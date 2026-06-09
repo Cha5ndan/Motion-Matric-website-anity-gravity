@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Motion Matrix Blog | Creative Strategy & Growth Insights</title>
+    <meta name="description" content="Insights, strategies, and workflows on creative growth, video production, AI automation, and performance marketing from the operators at Motion Matrix.">
+    <meta name="keywords" content="Creative Growth Blog, AI Automation Blog, Performance Marketing Insights, Motion Matrix Blog">
+    
+    <link rel="canonical" href="https://motionmatrix.studio/blog">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://motionmatrix.studio/blog">
+    <meta property="og:title" content="Motion Matrix Blog | Creative Strategy & Growth Insights">
+    <meta property="og:description" content="Insights and strategies on creative growth, AI automation, and performance marketing.">
+    <meta property="og:image" content="https://motionmatrix.studio/assets/og-cover.png">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://motionmatrix.studio/blog">
+    <meta name="twitter:title" content="Motion Matrix Blog | Creative Strategy & Growth Insights">
+    <meta name="twitter:description" content="Insights and strategies on creative growth, AI automation, and performance marketing.">
+    <meta name="twitter:image" content="https://motionmatrix.studio/assets/og-cover.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg viewBox='0 0 260 80' xmlns='http://www.w3.org/2000/svg'><g transform='translate(5, 5)'><rect x='0' y='0' width='70' height='70' fill='none' stroke='%23C6FF3D' stroke-width='6'/><rect x='12' y='12' width='46' height='46' fill='%23C6FF3D'/></g></svg>">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GA4_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GA4_MEASUREMENT_ID');
+    </script>
+</head>
+
+<body class="theme-dark">
+    <!-- Brand Header Motif -->
+    <div class="bands">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="/" class="logo" aria-label="Motion Matrix Home">
+                <svg class="logo-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(5, 5)">
+                        <rect x="0" y="0" width="70" height="70" fill="none" stroke="currentColor" stroke-width="6" />
+                        <rect x="12" y="12" width="46" height="46" fill="currentColor" />
+                    </g>
+                    <g font-family="'Anton', sans-serif" font-weight="normal" fill="currentColor">
+                        <text x="90" y="38" font-size="34" letter-spacing="1">MOTION</text>
+                        <text x="90" y="72" font-size="34" letter-spacing="1">MATRIX</text>
+                    </g>
+                </svg>
+            </a>
+            <div class="nav-links">
+                <a href="/#work" class="nav-link">Selected Work</a>
+                <a href="/#services" class="nav-link">Services</a>
+                <a href="/#why-us" class="nav-link">Why Us</a>
+                <a href="/#process" class="nav-link">Process</a>
+                <a href="/blog" class="nav-link">Blog</a>
+                <a href="/#contact" class="btn-premium small">Start a Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Index Header -->
+    <header class="blog-header">
+        <div class="section-container">
+            <div class="eyebrow">Motion Matrix Insights</div>
+            <h1 class="section-title">The Matrix Blog</h1>
+            <p class="section-desc">Practical systems engineering, conversion-led copywriting, and performance insights for modern marketing teams.</p>
+        </div>
+    </header>
+
+    <!-- Main Blog Grid Section -->
+    <section class="blog-section" style="padding-top: 40px;">
+        <div class="section-container">
+            <!-- Filter Tabs -->
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-tab active" data-category="all">All posts</button>
+                <!-- Categories will load dynamically here -->
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="blogLoading" class="text-center" style="padding: var(--space-lg) 0;">
+                <p style="font-family: var(--font-mono); color: var(--mm-steel);">Loading posts from database...</p>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid" id="blogGrid" style="display: none;">
+                <!-- Blog cards will inject dynamically here -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="blogEmpty" class="text-center" style="display: none; padding: var(--space-lg) 0;">
+                <p style="font-family: var(--font-mono); color: var(--mm-steel);">No posts found under this category.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-grid-layout">
+                <div class="footer-col footer-brand">
+                    <svg class="logo-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(5, 5)">
+                            <rect x="0" y="0" width="70" height="70" fill="none" stroke="currentColor" stroke-width="6" />
+                            <rect x="12" y="12" width="46" height="46" fill="currentColor" />
+                        </g>
+                        <g font-family="'Anton', sans-serif" font-weight="normal" fill="currentColor">
+                            <text x="90" y="38" font-size="34" letter-spacing="1">MOTION</text>
+                            <text x="90" y="72" font-size="34" letter-spacing="1">MATRIX</text>
+                        </g>
+                    </svg>
+                    <p class="footer-desc">
+                        Loud where it counts. Quiet everywhere else. Built in Kadur, KA.
+                    </p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Direct Contact</h4>
+                    <a href="mailto:hello@motionmatrix.studio">hello@motionmatrix.studio</a>
+                    <a href="tel:+919739690372">+91 9739 690 372</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Social Channels</h4>
+                    <a href="https://wa.me/919739690372" target="_blank">WhatsApp Chat</a>
+                    <a href="https://www.linkedin.com/company/motion-matrix-2/" target="_blank">LinkedIn</a>
+                    <a href="https://www.instagram.com/motionmatrix5/" target="_blank">Instagram</a>
+                    <a href="https://dribbble.com/Chandan_S" target="_blank">Dribbble</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Motion Matrix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase JS Library from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const loadingEl = document.getElementById('blogLoading');
+            const gridEl = document.getElementById('blogGrid');
+            const emptyEl = document.getElementById('blogEmpty');
+            const filterTabs = document.getElementById('filterTabs');
+            
+            let allPosts = [];
+            let categories = [];
+
+            try {
+                // Fetch public Supabase configuration from Serverless Function
+                const configRes = await fetch('/api/config');
+                const config = await configRes.json();
+
+                if (!config.supabaseUrl || !config.supabaseAnonKey) {
+                    throw new Error("Supabase configuration keys are missing.");
+                }
+
+                // Initialize client
+                const supabase = window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey);
+
+                // Fetch Categories
+                const { data: catData, error: catErr } = await supabase
+                    .from('categories')
+                    .select('*')
+                    .order('name', { ascending: true });
+                
+                if (!catErr && catData) {
+                    categories = catData;
+                    renderCategoryTabs(categories);
+                }
+
+                // Fetch Blog Posts
+                const { data: postData, error: postErr } = await supabase
+                    .from('blog_posts')
+                    .select('*, categories(name, slug)')
+                    .order('published_at', { ascending: false });
+
+                if (postErr) throw postErr;
+
+                allPosts = postData || [];
+                loadingEl.style.display = 'none';
+
+                if (allPosts.length === 0) {
+                    emptyEl.style.display = 'block';
+                } else {
+                    gridEl.style.display = 'grid';
+                    renderPosts(allPosts);
+                }
+
+            } catch (err) {
+                console.error("Failed to load blog posts:", err);
+                loadingEl.innerHTML = `<p style="color: #ff5252; font-family: var(--font-mono);">Failed to connect to blog CMS: ${err.message}</p>`;
+            }
+
+            // Render category tabs dynamically
+            function renderCategoryTabs(categories) {
+                categories.forEach(cat => {
+                    const btn = document.createElement('button');
+                    btn.className = 'filter-tab';
+                    btn.textContent = cat.name;
+                    btn.setAttribute('data-category', cat.slug);
+                    filterTabs.appendChild(btn);
+
+                    btn.addEventListener('click', (e) => {
+                        // Toggle active state
+                        document.querySelectorAll('.filter-tab').forEach(tab => tab.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        const filter = cat.slug;
+                        filterPosts(filter);
+                    });
+                });
+
+                // Attach 'All' click handler
+                document.querySelector('[data-category="all"]').addEventListener('click', (e) => {
+                    document.querySelectorAll('.filter-tab').forEach(tab => tab.classList.remove('active'));
+                    e.currentTarget.classList.add('active');
+                    filterPosts('all');
+                });
+            }
+
+            // Filter posts array client-side
+            function filterPosts(categorySlug) {
+                if (categorySlug === 'all') {
+                    if (allPosts.length === 0) {
+                        gridEl.style.display = 'none';
+                        emptyEl.style.display = 'block';
+                    } else {
+                        emptyEl.style.display = 'none';
+                        gridEl.style.display = 'grid';
+                        renderPosts(allPosts);
+                    }
+                } else {
+                    const filtered = allPosts.filter(post => post.categories && post.categories.slug === categorySlug);
+                    if (filtered.length === 0) {
+                        gridEl.style.display = 'none';
+                        emptyEl.style.display = 'block';
+                    } else {
+                        emptyEl.style.display = 'none';
+                        gridEl.style.display = 'grid';
+                        renderPosts(filtered);
+                    }
+                }
+            }
+
+            // Render blog post cards
+            function renderPosts(posts) {
+                gridEl.innerHTML = '';
+                posts.forEach(post => {
+                    const card = document.createElement('a');
+                    card.href = `/blog/${post.slug}`;
+                    card.className = 'blog-card';
+                    card.id = `blog-post-${post.id}`;
+
+                    const publishDate = new Date(post.published_at || post.created_at).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                    });
+
+                    const categoryName = post.categories ? post.categories.name : 'Uncategorized';
+                    const featuredImg = post.featured_image || 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop';
+                    
+                    // Simple excerpt strip tags
+                    const div = document.createElement('div');
+                    div.innerHTML = post.content;
+                    const text = div.textContent || div.innerText || '';
+                    const excerpt = post.meta_description || (text.substring(0, 110) + '...');
+
+                    card.innerHTML = `
+                        <div class="blog-card-img-wrapper">
+                            <img src="${featuredImg}" alt="${post.title}" class="blog-card-img" loading="lazy">
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <span>${categoryName}</span>
+                                <span>${publishDate}</span>
+                            </div>
+                            <h3 class="blog-card-title">${post.title}</h3>
+                            <p class="blog-card-excerpt">${excerpt}</p>
+                            <div class="blog-card-author">By ${post.author_name}</div>
+                        </div>
+                    `;
+
+                    gridEl.appendChild(card);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
