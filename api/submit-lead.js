@@ -1,6 +1,6 @@
 const { createClient } = require('@supabase/supabase-js');
 
-const OWNER_EMAIL = process.env.OWNER_EMAIL || 'chandan23985@gmail.com';
+const OWNER_EMAIL = process.env.OWNER_EMAIL || 'chandan@motionmatrix.studio';
 
 const json = (res, status, body) => {
   res.setHeader('Content-Type', 'application/json');
