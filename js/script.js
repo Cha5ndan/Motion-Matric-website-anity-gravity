@@ -1,221 +1,249 @@
-// Motion Matrix Client-Side Logic
+// Motion Matrix — Client-Side Logic v2
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Navbar Scroll Toggle
+    // ─── 1. Navbar Scroll ─────────────────────────────────────
     const navbar = document.getElementById('navbar');
     if (navbar) {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 40) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            navbar.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+    }
+
+    // ─── 2. Mobile Menu Toggle ────────────────────────────────
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks   = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        // Close on nav link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
         });
     }
 
-    // 2. Infinite Scroll Logo Bar Animation Loop
-    const scrollers = document.querySelectorAll(".scroller");
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        scrollers.forEach((scroller) => {
-            scroller.setAttribute("data-animated", true);
-            const scrollerInner = scroller.querySelector(".scroller__inner");
-            if (scrollerInner) {
-                const scrollerContent = Array.from(scrollerInner.children);
-                // Duplicate items to ensure smooth infinite loop
-                scrollerContent.forEach((item) => {
-                    const duplicatedItem = item.cloneNode(true);
-                    duplicatedItem.setAttribute("aria-hidden", true);
-                    scrollerInner.appendChild(duplicatedItem);
+    // ─── 3. Client Logo Scroller ──────────────────────────────
+    const scrollers = document.querySelectorAll('.scroller');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        scrollers.forEach(scroller => {
+            scroller.setAttribute('data-animated', true);
+            const inner = scroller.querySelector('.scroller__inner');
+            if (inner) {
+                Array.from(inner.children).forEach(item => {
+                    const clone = item.cloneNode(true);
+                    clone.setAttribute('aria-hidden', true);
+                    inner.appendChild(clone);
                 });
             }
         });
     }
 
-    // 3. Custom Brand Cursor Tracking
+    // ─── 4. Testimonial Scroller — duplicate cards ────────────
+    ['testiTrack1', 'testiTrack2'].forEach(id => {
+        const track = document.getElementById(id);
+        if (!track) return;
+        const cards = Array.from(track.children);
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            clone.setAttribute('aria-hidden', true);
+            track.appendChild(clone);
+        });
+    });
+
+    // ─── 5. Custom Cursor ─────────────────────────────────────
     const cursor = document.querySelector('.cursor');
     if (cursor) {
-        document.addEventListener('mousemove', (e) => {
+        document.addEventListener('mousemove', e => {
             cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
+            cursor.style.top  = e.clientY + 'px';
+        }, { passive: true });
 
-        // Add magnetic scale-up effect on hoverables
-        const hoverables = document.querySelectorAll('a, button, .portfolio-card, .premium-card, input, select, textarea, .filter-tab');
-        hoverables.forEach(el => {
+        document.querySelectorAll('a, button, .portfolio-card, .premium-card, input, select, textarea').forEach(el => {
             el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(2)';
-                cursor.style.backgroundColor = 'rgba(198, 255, 61, 0.15)';
-                cursor.style.borderColor = '#C6FF3D';
+                cursor.style.transform = 'translate(-50%, -50%) scale(2.2)';
+                cursor.style.backgroundColor = 'rgba(198, 255, 61, 0.12)';
             });
             el.addEventListener('mouseleave', () => {
                 cursor.style.transform = 'translate(-50%, -50%) scale(1)';
                 cursor.style.backgroundColor = 'transparent';
-                cursor.style.borderColor = '#C6FF3D';
             });
         });
     }
 
-    // 4. GSAP Text Loop Carousel (Hero Headlines)
-    if (typeof gsap !== 'undefined') {
+    // ─── 6. GSAP Animations ───────────────────────────────────
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero text carousel
         const words = gsap.utils.toArray('.animated-word');
         if (words.length > 0) {
-            let currentIndex = 0;
-
-            // Hide other words initially to prevent layouts overlaps and flash
-            gsap.set(words, { opacity: 0, y: "-120%" });
-            gsap.set(words[0], { opacity: 1, y: "0%" });
+            let current = 0;
+            gsap.set(words, { opacity: 0, y: '-120%' });
+            gsap.set(words[0], { opacity: 1, y: '0%' });
 
             setInterval(() => {
-                const prevIndex = currentIndex;
-                currentIndex = (currentIndex + 1) % words.length;
-
-                // Animate old word out downwards
-                gsap.to(words[prevIndex], {
-                    y: "120%",
-                    opacity: 0,
-                    duration: 0.5,
-                    ease: "power2.inOut"
-                });
-
-                // Prepare new word top and animate down to center
-                gsap.set(words[currentIndex], { y: "-120%", opacity: 0 });
-                gsap.to(words[currentIndex], {
-                    y: "0%",
-                    opacity: 1,
-                    duration: 0.5,
-                    ease: "power2.inOut"
-                });
-
-            }, 2600);
+                const prev = current;
+                current = (current + 1) % words.length;
+                gsap.to(words[prev], { y: '120%', opacity: 0, duration: 0.55, ease: 'power2.inOut' });
+                gsap.fromTo(words[current], { y: '-120%', opacity: 0 }, { y: '0%', opacity: 1, duration: 0.55, ease: 'power2.inOut' });
+            }, 2800);
         }
-    }
 
-    // 5. GA4 Custom Event Trackers on CTA clicks
-    const btnBookCall = document.getElementById('heroCtaCall');
-    const btnSeeWork = document.getElementById('heroCtaWork');
-    const navBtnContact = document.getElementById('navBtnContact');
+        // Hero content entrance
+        gsap.from('.hero-content .eyebrow', { y: 30, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.2 });
+        gsap.from('.hero-title', { y: 50, opacity: 0, duration: 0.9, ease: 'power3.out', delay: 0.35 });
+        gsap.from('.hero-subtitle', { y: 30, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.55 });
+        gsap.from('.hero-actions', { y: 24, opacity: 0, duration: 0.6, ease: 'power3.out', delay: 0.7 });
 
-    function trackGAEvent(eventName, params) {
-        if (typeof gtag === 'function') {
-            gtag('event', eventName, params);
+        // Stats counter animation
+        const statNums = document.querySelectorAll('.stat-num[data-target]');
+        if (statNums.length) {
+            statNums.forEach(el => {
+                const target = parseInt(el.dataset.target, 10);
+                ScrollTrigger.create({
+                    trigger: '.stats-bar',
+                    start: 'top 80%',
+                    once: true,
+                    onEnter: () => {
+                        gsap.to({ val: 0 }, {
+                            val: target,
+                            duration: 1.8,
+                            ease: 'power2.out',
+                            onUpdate: function() {
+                                el.textContent = Math.round(this.targets()[0].val);
+                            }
+                        });
+                    }
+                });
+            });
         }
-    }
 
-    if (btnBookCall) {
-        btnBookCall.addEventListener('click', () => {
-            trackGAEvent('click_cta_book_call', {
-                'event_category': 'Conversion',
-                'event_label': 'Hero CTA Calendar'
+        // Section reveals — staggered cards
+        const revealSections = [
+            { trigger: '#work',      targets: '.portfolio-card',  stagger: 0.1 },
+            { trigger: '#services',  targets: '.premium-card',    stagger: 0.08 },
+            { trigger: '#why-us',    targets: '.feature-block',   stagger: 0.1 },
+            { trigger: '#process',   targets: '.process-step',    stagger: 0.1 },
+        ];
+
+        revealSections.forEach(({ trigger, targets, stagger }) => {
+            const els = document.querySelectorAll(targets);
+            if (!els.length) return;
+            gsap.from(els, {
+                scrollTrigger: { trigger, start: 'top 78%' },
+                y: 56,
+                opacity: 0,
+                duration: 0.75,
+                stagger,
+                ease: 'power3.out',
             });
+        });
+
+        // Section headers
+        document.querySelectorAll('.section-header').forEach(header => {
+            gsap.from(header, {
+                scrollTrigger: { trigger: header, start: 'top 82%' },
+                y: 36,
+                opacity: 0,
+                duration: 0.7,
+                ease: 'power3.out',
+            });
+        });
+
+        // Contact section
+        gsap.from('#contactInfoArea', {
+            scrollTrigger: { trigger: '#contact', start: 'top 75%' },
+            x: -40, opacity: 0, duration: 0.8, ease: 'power3.out'
+        });
+        gsap.from('#formWrapper', {
+            scrollTrigger: { trigger: '#contact', start: 'top 75%' },
+            x: 40, opacity: 0, duration: 0.8, ease: 'power3.out', delay: 0.15
         });
     }
 
-    if (btnSeeWork) {
-        btnSeeWork.addEventListener('click', () => {
-            trackGAEvent('click_cta_see_work', {
-                'event_category': 'Engagement',
-                'event_label': 'Hero CTA Selected Work'
-            });
-        });
+    // ─── 7. GA4 Event Trackers ────────────────────────────────
+    function trackGAEvent(name, params) {
+        if (typeof gtag === 'function') gtag('event', name, params);
     }
 
-    if (navBtnContact) {
-        navBtnContact.addEventListener('click', () => {
-            trackGAEvent('click_nav_start_project', {
-                'event_category': 'Conversion',
-                'event_label': 'Navigation Action Button'
-            });
-        });
-    }
+    const btnBook  = document.getElementById('heroCtaCall');
+    const btnWork  = document.getElementById('heroCtaWork');
+    const btnNav   = document.getElementById('navBtnContact');
 
-    // 6. Lead Capture Form Submission Handler
-    const leadForm = document.getElementById('leadForm');
+    if (btnBook) btnBook.addEventListener('click', () => trackGAEvent('click_cta_book_call', { event_category: 'Conversion' }));
+    if (btnWork) btnWork.addEventListener('click', () => trackGAEvent('click_cta_see_work', { event_category: 'Engagement' }));
+    if (btnNav)  btnNav.addEventListener('click',  () => trackGAEvent('click_nav_start_project', { event_category: 'Conversion' }));
+
+    // ─── 8. Lead Capture Form ─────────────────────────────────
+    const leadForm    = document.getElementById('leadForm');
     const formMessage = document.getElementById('formMessage');
-    const submitBtn = document.getElementById('submitBtn');
+    const submitBtn   = document.getElementById('submitBtn');
     const successModal = document.getElementById('successModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
 
     if (leadForm) {
-        leadForm.addEventListener('submit', async (e) => {
+        leadForm.addEventListener('submit', async e => {
             e.preventDefault();
-
-            // Button loading visual feedback
-            const originalBtnText = submitBtn.innerText;
+            const orig = submitBtn.innerText;
             submitBtn.innerText = 'Submitting...';
             submitBtn.disabled = true;
             formMessage.style.display = 'none';
 
-            // Extract fields
             const payload = {
-                name: document.getElementById('name').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                company: document.getElementById('company') ? document.getElementById('company').value.trim() : '',
-                phone: document.getElementById('phone') ? document.getElementById('phone').value.trim() : '',
+                name:    document.getElementById('name').value.trim(),
+                email:   document.getElementById('email').value.trim(),
+                company: document.getElementById('company')?.value.trim() || '',
+                phone:   document.getElementById('phone')?.value.trim() || '',
                 service: document.getElementById('service').value,
                 message: document.getElementById('message').value.trim(),
-                source: 'website_homepage_lead_form'
+                source:  'website_homepage_lead_form'
             };
 
             try {
-                const response = await fetch('/api/submit-lead', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
-                });
-
-                const result = await response.json();
-
-                if (response.ok && result.success) {
-                    // GA4 Form Track Event Success
-                    trackGAEvent('lead_form_submit', {
-                        'event_category': 'Engagement',
-                        'event_label': 'Lead Form Submit Success',
-                        'service_selected': payload.service
-                    });
-
+                const res    = await fetch('/api/submit-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                const result = await res.json();
+                if (res.ok && result.success) {
+                    trackGAEvent('lead_form_submit', { event_category: 'Engagement', service_selected: payload.service });
                     leadForm.reset();
-                    
-                    // Show success confirmation modal
-                    if (successModal) {
-                        successModal.classList.add('active');
-                    } else {
-                        formMessage.textContent = "Thank you! Your inquiry was submitted successfully.";
-                        formMessage.className = 'form-message success';
-                        formMessage.style.display = 'block';
-                    }
+                    if (successModal) successModal.classList.add('active');
                 } else {
-                    throw new Error(result.error || 'Server error occurred during lead saving.');
+                    throw new Error(result.error || 'Server error.');
                 }
-
             } catch (err) {
-                console.error('Lead submit error:', err);
-                formMessage.textContent = err.message || "Oops! There was a connection issue. Please try again.";
+                formMessage.textContent = err.message || 'Connection issue. Please try again.';
                 formMessage.className = 'form-message error';
                 formMessage.style.display = 'block';
-                
-                trackGAEvent('lead_form_error', {
-                    'event_category': 'Error',
-                    'event_label': err.message || 'Unknown Connection Error'
-                });
             } finally {
-                submitBtn.innerText = originalBtnText;
+                submitBtn.innerText = orig;
                 submitBtn.disabled = false;
             }
         });
     }
 
-    // Modal Close Logic
     if (closeModalBtn && successModal) {
-        closeModalBtn.addEventListener('click', () => {
-            successModal.classList.remove('active');
-        });
+        closeModalBtn.addEventListener('click', () => successModal.classList.remove('active'));
     }
 
-    // 7. Dynamic Portfolio Loader from Supabase (Headless integration)
-    const portfolioGrid = document.getElementById('portfolioGrid');
+    // ─── 9. Portfolio Loader ──────────────────────────────────
+    const portfolioGrid    = document.getElementById('portfolioGrid');
     const portfolioLoading = document.getElementById('portfolioLoading');
+
+    // Static fallback — shown immediately while Supabase loads
+    const STATIC_PORTFOLIO = [
+        { id: 's1', title: 'Simplifying Complexity',   category: 'Explainer Videos',              image_url: '/assets/portfolio-explainer.png',    project_url: 'https://dribbble.com/shots/26396711-Explainer-Videofolio' },
+        { id: 's2', title: 'Authentic Stories',        category: 'Testimonial Videos',             image_url: '/assets/portfolio-testimonial.png',  project_url: 'https://dribbble.com/shots/26396561-Testimonial-Video-Series' },
+        { id: 's3', title: 'Audio & Visual Excellence',category: 'Podcast Production',             image_url: '/assets/portfolio-podcast.png',      project_url: 'https://dribbble.com/shots/26396458-Refyne-Podcast' },
+        { id: 's4', title: 'Campaign Assets',          category: 'Marketing Creatives',            image_url: '/assets/portfolio-creative.png',     project_url: 'https://dribbble.com/shots/26396432-Refyne-Graphic-Visual-Design-for-Marketing-Collaterals' },
+        { id: 's5', title: 'Conversion Drivers',       category: 'Performance Marketing Campaigns',image_url: '/assets/portfolio-performance.png',  project_url: 'https://dribbble.com/shots/26396658-Performance-Ad-Portfolio' },
+    ];
 
     if (portfolioGrid && portfolioLoading) {
         loadPortfolio();
@@ -223,29 +251,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadPortfolio() {
         try {
-            // Load configuration parameters
             const configRes = await fetch('/api/config');
-            const config = await configRes.json();
+            const config    = await configRes.json();
 
             if (!config.supabaseUrl || !config.supabaseAnonKey) {
-                throw new Error("Supabase credentials are not configured.");
+                throw new Error('Supabase not configured');
             }
 
-            // Dynamic import of Supabase SDK from CDN to maximize Initial Page Load Performance
             if (!window.supabase) {
                 await new Promise((resolve, reject) => {
-                    const script = document.createElement('script');
-                    script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
-                    script.onload = resolve;
-                    script.onerror = reject;
-                    document.head.appendChild(script);
+                    const s = document.createElement('script');
+                    s.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+                    s.onload = resolve; s.onerror = reject;
+                    document.head.appendChild(s);
                 });
             }
 
-            const supabase = window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey);
-
-            // Query projects
-            const { data: projects, error } = await supabase
+            const client = window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey);
+            const { data: projects, error } = await client
                 .from('portfolio_projects')
                 .select('*')
                 .order('sort_order', { ascending: true });
@@ -255,58 +278,52 @@ document.addEventListener('DOMContentLoaded', () => {
             portfolioLoading.style.display = 'none';
 
             if (!projects || projects.length === 0) {
-                portfolioLoading.innerText = 'No portfolio items published.';
-                portfolioLoading.style.display = 'block';
+                renderPortfolio(STATIC_PORTFOLIO);
             } else {
-                portfolioGrid.style.display = 'grid';
                 renderPortfolio(projects);
             }
 
-        } catch (err) {
-            console.error('Failed to load portfolio items:', err);
-            portfolioLoading.innerHTML = `<span style="color: #ff5252; font-family: var(--font-mono);">Failed to fetch portfolio: ${err.message}</span>`;
+        } catch {
+            // Supabase unavailable — show static fallback silently
+            portfolioLoading.style.display = 'none';
+            renderPortfolio(STATIC_PORTFOLIO);
         }
+
+        portfolioGrid.style.display = 'grid';
     }
 
     function renderPortfolio(projects) {
         portfolioGrid.innerHTML = '';
-        projects.forEach((proj) => {
+        projects.forEach(proj => {
             const article = document.createElement('article');
             article.className = 'portfolio-card';
-            article.id = `project-${proj.id}`;
 
             if (proj.project_url) {
-                article.addEventListener('click', () => {
-                    window.open(proj.project_url, '_blank');
-                });
+                article.addEventListener('click', () => window.open(proj.project_url, '_blank'));
             }
 
             article.innerHTML = `
                 <div class="portfolio-img-wrapper">
-                    <img src="${proj.image_url}" alt="${proj.title} Case Study" class="portfolio-img" loading="lazy">
+                    <img src="${proj.image_url}" alt="${proj.title}" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-overlay-cta">View on Dribbble</span>
+                    </div>
                 </div>
                 <div class="portfolio-info">
                     <span class="portfolio-category">${proj.category}</span>
                     <h3 class="portfolio-title">${proj.title}</h3>
                 </div>
             `;
-            
-            // Add custom cursor scale animations
-            if (cursor) {
-                article.addEventListener('mouseenter', () => {
-                    cursor.style.transform = 'translate(-50%, -50%) scale(2)';
-                    cursor.style.backgroundColor = 'rgba(198, 255, 61, 0.15)';
-                    cursor.style.borderColor = '#C6FF3D';
-                });
-                article.addEventListener('mouseleave', () => {
-                    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-                    cursor.style.backgroundColor = 'transparent';
-                    cursor.style.borderColor = '#C6FF3D';
-                });
-            }
 
             portfolioGrid.appendChild(article);
         });
+
+        // Animate in with GSAP if available
+        if (typeof gsap !== 'undefined') {
+            gsap.from(portfolioGrid.querySelectorAll('.portfolio-card'), {
+                y: 48, opacity: 0, duration: 0.65, stagger: 0.1, ease: 'power3.out'
+            });
+        }
     }
 
 });

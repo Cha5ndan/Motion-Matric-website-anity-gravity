@@ -106,17 +106,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="logo" aria-label="Motion Matrix Home" id="navLogo">
-                <!-- Signature Logo: Inner and Outer Squares -->
-                <svg class="logo-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
-                    <g transform="translate(5, 5)">
-                        <rect x="0" y="0" width="70" height="70" fill="none" stroke="currentColor" stroke-width="6" />
-                        <rect x="12" y="12" width="46" height="46" fill="currentColor" />
-                    </g>
-                    <g font-family="'Anton', sans-serif" font-weight="normal" fill="currentColor">
-                        <text x="90" y="38" font-size="34" letter-spacing="1">MOTION</text>
-                        <text x="90" y="72" font-size="34" letter-spacing="1">MATRIX</text>
-                    </g>
-                </svg>
+                <img src="/assets/logo-white.png" alt="Motion Matrix" class="logo-img">
             </a>
             <div class="nav-links">
                 <a href="#work" class="nav-link" id="navLinkWork">Selected Work</a>
@@ -166,6 +156,35 @@
             </div>
             <!-- Minimal background glow -->
             <div class="hero-glow"></div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="stats-bar" id="stats">
+            <div class="section-container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">
+                            <span class="stat-num" data-target="40" id="statCampaigns">0</span>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <span class="stat-label">Campaigns Delivered</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-value">
+                            <span class="stat-num" data-target="8" id="statBrands">0</span>
+                        </div>
+                        <span class="stat-label">Brands Scaled</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-value">
+                            <span class="stat-num" data-target="2" id="statWeeks">0</span>
+                        </div>
+                        <span class="stat-label">Week Delivery</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Client Logo Bar -->
@@ -327,7 +346,7 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
+        <!-- Testimonials — Horizontal Auto-Scroll -->
         <section class="testimonials theme-dark" id="testimonials" style="border-top: 2px solid var(--mm-graphite);">
             <div class="section-container">
                 <div class="section-header">
@@ -335,31 +354,95 @@
                     <h2 class="section-title">Client Stories</h2>
                     <p class="section-desc">How we help agencies and digital product brands scale their operations.</p>
                 </div>
+            </div>
 
-                <div class="grid grid-2 gap-8">
-                    <div class="testimonial-card" id="testi1">
-                        <p class="testimonial-quote">
-                            "Motion Matrix transformed our creative delivery pipeline. Their AI automations saved our designers hours of manual configuration and the brand guidelines refresh gave us massive conversion jumps."
-                        </p>
+            <!-- Row 1: scrolls left -->
+            <div class="testi-scroll-area" id="testiScrollArea1">
+                <div class="testi-track" id="testiTrack1">
+                    <div class="testimonial-card">
+                        <span class="testi-quote-mark">"</span>
+                        <p class="testimonial-quote">Motion Matrix transformed our creative delivery pipeline. Their AI automations saved our designers hours of configuration and the brand refresh drove massive conversion jumps.</p>
                         <div class="testimonial-author">
-                            <div class="testimonial-avatar" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop');"></div>
-                            <div class="author-meta">
-                                <h5>Sarah K.</h5>
-                                <span>Marketing Director, Refyne</span>
-                            </div>
+                            <div class="testimonial-avatar" style="background-image:url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop');"></div>
+                            <div class="author-meta"><h5>Sarah K.</h5><span>Marketing Director, Refyne</span></div>
                         </div>
                     </div>
-
-                    <div class="testimonial-card" id="testi2">
-                        <p class="testimonial-quote">
-                            "Direct access to founder-led implementation is a game-changer. They built our website, configured our lead funnel database in Supabase, and our performance ad clicks scaled by 40% in two weeks."
-                        </p>
+                    <div class="testimonial-card">
+                        <span class="testi-quote-mark">"</span>
+                        <p class="testimonial-quote">Direct founder-led implementation is a game-changer. They built our site, configured our lead funnel, and our performance ad clicks scaled 40% in two weeks.</p>
                         <div class="testimonial-author">
-                            <div class="testimonial-avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop');"></div>
-                            <div class="author-meta">
-                                <h5>Alex D.</h5>
-                                <span>Co-Founder, Solv App</span>
-                            </div>
+                            <div class="testimonial-avatar" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop');"></div>
+                            <div class="author-meta"><h5>Alex D.</h5><span>Co-Founder, Solv App</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testi-quote-mark">"</span>
+                        <p class="testimonial-quote">Their explainer video work for our product launch was genuinely world-class. Clean visuals, sharp script, and delivered on time — we saw a 3x improvement in demo sign-ups.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background-image:url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=150&auto=format&fit=crop');"></div>
+                            <div class="author-meta"><h5>Priya M.</h5><span>Head of Growth, edureka!</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testi-quote-mark">"</span>
+                        <p class="testimonial-quote">The AI workflow automation they built for our content team cut our weekly production time in half. We're shipping double the assets with the same headcount.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background-image:url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop');"></div>
+                            <div class="author-meta"><h5>Rohan V.</h5><span>CEO, KuberX</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testi-quote-mark">"</span>
+                        <p class="testimonial-quote">We needed a partner who could move fast without losing quality. Motion Matrix delivered a complete brand system and landing page in under 10 days. Exceptional work.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background-image:url('https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&auto=format&fit=crop');"></div>
+                            <div class="author-meta"><h5>Ananya R.</h5><span>Founder, GrayQuest</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: scrolls right (reverse) -->
+            <div class="testi-scroll-area" id="testiScrollArea2">
+                <div class="testi-track reverse" id="testiTrack2">
+                    <div class="testimonial-card">
+                        <span class="testi-quote-mark">"</span>
+                        <p class="testimonial-quote">The performance marketing campaigns they ran for us were data-driven and beautifully creative. Our cost-per-lead dropped 35% while lead quality actually went up.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background-image:url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=150&auto=format&fit=crop');"></div>
+                            <div class="author-meta"><h5>Karan S.</h5><span>VP Marketing, RevSure</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testi-quote-mark">"</span>
+                        <p class="testimonial-quote">From brand audit to live website, the process was seamless. They're a rare team that understands both design aesthetics and business growth strategy equally well.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background-image:url('https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?q=80&w=150&auto=format&fit=crop');"></div>
+                            <div class="author-meta"><h5>Meera T.</h5><span>Creative Director, Isocreates</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testi-quote-mark">"</span>
+                        <p class="testimonial-quote">Their podcast production and distribution setup for our brand was outstanding. Audio quality, show notes, and the visual identity all came together beautifully.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background-image:url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=150&auto=format&fit=crop');"></div>
+                            <div class="author-meta"><h5>Divya K.</h5><span>Brand Manager, Jai Kissan</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testi-quote-mark">"</span>
+                        <p class="testimonial-quote">What sets Motion Matrix apart is speed with precision. No long briefs, no delays. Just fast execution and results you can actually measure. We've renewed three times now.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background-image:url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=150&auto=format&fit=crop');"></div>
+                            <div class="author-meta"><h5>Nikhil B.</h5><span>Head of Product, Refyne</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testi-quote-mark">"</span>
+                        <p class="testimonial-quote">Best creative investment we made this year. They rebuilt our entire visual identity system in two weeks and our investor deck conversions improved immediately after.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop');"></div>
+                            <div class="author-meta"><h5>Shruti P.</h5><span>Co-Founder, Solv App</span></div>
                         </div>
                     </div>
                 </div>
@@ -456,16 +539,7 @@
         <div class="section-container">
             <div class="footer-grid-layout">
                 <div class="footer-col footer-brand">
-                    <svg class="logo-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
-                        <g transform="translate(5, 5)">
-                            <rect x="0" y="0" width="70" height="70" fill="none" stroke="currentColor" stroke-width="6" />
-                            <rect x="12" y="12" width="46" height="46" fill="currentColor" />
-                        </g>
-                        <g font-family="'Anton', sans-serif" font-weight="normal" fill="currentColor">
-                            <text x="90" y="38" font-size="34" letter-spacing="1">MOTION</text>
-                            <text x="90" y="72" font-size="34" letter-spacing="1">MATRIX</text>
-                        </g>
-                    </svg>
+                    <img src="/assets/logo-white.png" alt="Motion Matrix" class="logo-img">
                     <p class="footer-desc">
                         Loud where it counts. Quiet everywhere else. Built in Kadur, serving premium brands globally.
                     </p>
