@@ -1,6 +1,6 @@
 const { createClient } = require('@supabase/supabase-js');
 
-const OWNER_EMAIL = 'chandan@motionmatrix.studio';
+const OWNER_EMAIL = process.env.OWNER_EMAIL || 'chandan23985@gmail.com';
 
 const json = (res, status, body) => {
   res.setHeader('Content-Type', 'application/json');
@@ -82,7 +82,13 @@ module.exports = async (req, res) => {
           `
         });
 
-        emailStatus = result.error ? `failed: ${result.error.message}` : 'sent';
+        if (result.error) {
+          console.error('Resend delivery error:', JSON.stringify(result.error));
+          emailStatus = `failed: ${result.error.message}`;
+        } else {
+          console.log('Email sent OK, id:', result.data?.id);
+          emailStatus = 'sent';
+        }
       } catch (mailErr) {
         console.error('Resend error:', mailErr.message);
         emailStatus = 'error';
