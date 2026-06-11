@@ -82,19 +82,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
 
-        // Hero text carousel
+        // Hero text carousel — show word 0 immediately, then cycle
         const words = gsap.utils.toArray('.animated-word');
         if (words.length > 0) {
             let current = 0;
+            // Reset all to hidden, then show first
             gsap.set(words, { opacity: 0, y: '-120%' });
             gsap.set(words[0], { opacity: 1, y: '0%' });
 
             setInterval(() => {
                 const prev = current;
                 current = (current + 1) % words.length;
-                gsap.to(words[prev], { y: '120%', opacity: 0, duration: 0.55, ease: 'power2.inOut' });
-                gsap.fromTo(words[current], { y: '-120%', opacity: 0 }, { y: '0%', opacity: 1, duration: 0.55, ease: 'power2.inOut' });
-            }, 2800);
+                gsap.to(words[prev], { y: '120%', opacity: 0, duration: 0.5, ease: 'power2.inOut' });
+                gsap.fromTo(words[current],
+                    { y: '-120%', opacity: 0 },
+                    { y: '0%', opacity: 1, duration: 0.5, ease: 'power2.inOut', delay: 0.05 }
+                );
+            }, 2600);
         }
 
         // Hero content entrance
@@ -103,26 +107,36 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.from('.hero-subtitle', { y: 30, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.55 });
         gsap.from('.hero-actions', { y: 24, opacity: 0, duration: 0.6, ease: 'power3.out', delay: 0.7 });
 
-        // Stats counter animation
+        // Stats counter — loops continuously
         const statNums = document.querySelectorAll('.stat-num[data-target]');
         if (statNums.length) {
-            statNums.forEach(el => {
-                const target = parseInt(el.dataset.target, 10);
+            function loopStat(el, target) {
+                const ticker = { val: 0 };
+                function cycle() {
+                    gsap.fromTo(ticker,
+                        { val: 0 },
+                        {
+                            val: target,
+                            duration: 1.6,
+                            ease: 'power2.out',
+                            onUpdate() { el.textContent = Math.round(ticker.val); },
+                            onComplete() {
+                                setTimeout(cycle, 3200); // hold then restart
+                            }
+                        }
+                    );
+                }
+                // Start when stats bar enters view, then keep looping
                 ScrollTrigger.create({
                     trigger: '.stats-bar',
-                    start: 'top 80%',
+                    start: 'top 85%',
                     once: true,
-                    onEnter: () => {
-                        gsap.to({ val: 0 }, {
-                            val: target,
-                            duration: 1.8,
-                            ease: 'power2.out',
-                            onUpdate: function() {
-                                el.textContent = Math.round(this.targets()[0].val);
-                            }
-                        });
-                    }
+                    onEnter: cycle
                 });
+            }
+
+            statNums.forEach(el => {
+                loopStat(el, parseInt(el.dataset.target, 10));
             });
         }
 
@@ -233,8 +247,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ─── 9. Portfolio Loader ──────────────────────────────────
-    const portfolioGrid    = document.getElementById('portfolioGrid');
-    const portfolioLoading = document.getElementById('portfolioLoading');
+    const portfolioGrid       = document.getElementById('portfolioGrid');
+    const portfolioScrollerWrap = document.getElementById('portfolioScrollerWrap');
+    const portfolioLoading    = document.getElementById('portfolioLoading');
 
     // Static fallback — shown immediately while Supabase loads
     const STATIC_PORTFOLIO = [
@@ -284,24 +299,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
         } catch {
-            // Supabase unavailable — show static fallback silently
             portfolioLoading.style.display = 'none';
             renderPortfolio(STATIC_PORTFOLIO);
         }
-
-        portfolioGrid.style.display = 'grid';
     }
 
     function renderPortfolio(projects) {
         portfolioGrid.innerHTML = '';
+
+        // Render cards into the track
         projects.forEach(proj => {
             const article = document.createElement('article');
             article.className = 'portfolio-card';
-
             if (proj.project_url) {
                 article.addEventListener('click', () => window.open(proj.project_url, '_blank'));
             }
-
             article.innerHTML = `
                 <div class="portfolio-img-wrapper">
                     <img src="${proj.image_url}" alt="${proj.title}" class="portfolio-img" loading="lazy">
@@ -314,16 +326,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3 class="portfolio-title">${proj.title}</h3>
                 </div>
             `;
-
             portfolioGrid.appendChild(article);
         });
 
-        // Animate in with GSAP if available
-        if (typeof gsap !== 'undefined') {
-            gsap.from(portfolioGrid.querySelectorAll('.portfolio-card'), {
-                y: 48, opacity: 0, duration: 0.65, stagger: 0.1, ease: 'power3.out'
-            });
-        }
+        // Duplicate cards for seamless infinite loop
+        Array.from(portfolioGrid.children).forEach(card => {
+            const clone = card.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            // Re-attach click on clone
+            const url = projects[Array.from(portfolioGrid.children).indexOf(card)]?.project_url;
+            if (url) clone.addEventListener('click', () => window.open(url, '_blank'));
+            portfolioGrid.appendChild(clone);
+        });
+
+        // Show the scroller wrapper
+        if (portfolioScrollerWrap) portfolioScrollerWrap.style.display = 'block';
     }
 
 });

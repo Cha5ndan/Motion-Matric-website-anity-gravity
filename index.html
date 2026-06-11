@@ -129,17 +129,18 @@
                 <div class="hero-content">
                     <div class="eyebrow">Your Growth Partner</div>
                     <h1 class="hero-title">
-                        Results-focused<br>creative growth for<br>
+                        We Build Brands<br>
+                        That Move, Scale,<br>
                         <span class="animated-text-wrapper" id="heroTextLoop">
-                            <span class="animated-word">Modern Brands.</span>
-                            <span class="animated-word">Fast Growth.</span>
-                            <span class="animated-word">AI Pipelines.</span>
-                            <span class="animated-word">True ROI.</span>
+                            <span class="animated-word">And Convert.</span>
+                            <span class="animated-word">And Stand Out.</span>
+                            <span class="animated-word">And Win More.</span>
+                            <span class="animated-word">And Grow Fast.</span>
                         </span>
                     </h1>
 
                     <p class="hero-subtitle">
-                        We help brands scale with content, creative strategy, performance marketing, and AI-powered systems.
+                        Content, performance marketing, and AI-powered systems — built for brands that refuse to be average.
                     </p>
 
                     <div class="hero-actions">
@@ -154,7 +155,11 @@
                     </div>
                 </div>
             </div>
-            <!-- Minimal background glow -->
+            <!-- Decorative geometry -->
+            <div class="hero-deco" aria-hidden="true">
+                <div class="hero-deco-outer"></div>
+                <div class="hero-deco-inner"></div>
+            </div>
             <div class="hero-glow"></div>
         </section>
 
@@ -204,21 +209,20 @@
         </section>
 
         <!-- Selected Work Portfolio -->
-        <section class="portfolio" id="work" style="background-color: var(--mm-paper); color: var(--mm-black);">
+        <section class="portfolio" id="work">
             <div class="section-container">
                 <div class="section-header">
                     <div class="eyebrow" style="color: var(--mm-iron);">Our Portfolio</div>
                     <h2 class="section-title" style="color: var(--mm-black);">Selected Work</h2>
-                    <p class="section-desc" style="color: var(--mm-iron);">A curation of high-performing campaigns, brand identity overhauls, and explainer assets.</p>
+                    <p class="section-desc" style="color: var(--mm-iron);">High-performing campaigns, brand overhauls, and content assets — built to move the needle.</p>
                 </div>
-
-                <!-- Dynamic Portfolio Loader -->
-                <div id="portfolioLoading" style="text-align: center; padding: 40px 0; font-family: var(--font-mono); color: var(--mm-iron);">
+                <div id="portfolioLoading" style="text-align:center; padding:40px 0; font-family:var(--font-mono); color:var(--mm-iron);">
                     Loading client portfolio...
                 </div>
-                <div class="grid grid-2 gap-8" id="portfolioGrid" style="display: none;">
-                    <!-- Dynamically populated via script.js -->
-                </div>
+            </div>
+            <!-- Full-width horizontal scroller -->
+            <div class="portfolio-scroller-wrap" id="portfolioScrollerWrap" style="display:none;">
+                <div class="portfolio-track" id="portfolioGrid"></div>
             </div>
         </section>
 
@@ -233,36 +237,42 @@
 
                 <div class="grid grid-3 gap-6">
                     <div class="premium-card" id="service1">
+                        <span class="service-bg-num" aria-hidden="true">01</span>
                         <span class="service-num">01 / CAPABILITY</span>
                         <h3>Content Creation</h3>
                         <p>High-end explainer videos, brand media assets, and podcast production that capture attention instantly.</p>
                     </div>
 
                     <div class="premium-card" id="service2">
+                        <span class="service-bg-num" aria-hidden="true">02</span>
                         <span class="service-num">02 / CAPABILITY</span>
                         <h3>Performance Marketing</h3>
                         <p>Paid media campaigns that drive conversions, scale traffic volumes, and prove clear, measurable ROI.</p>
                     </div>
 
                     <div class="premium-card" id="service3">
+                        <span class="service-bg-num" aria-hidden="true">03</span>
                         <span class="service-num">03 / CAPABILITY</span>
                         <h3>AI Automation</h3>
                         <p>Bespoke software automation systems that optimize content pipelines and streamline daily operations.</p>
                     </div>
 
                     <div class="premium-card" id="service4">
+                        <span class="service-bg-num" aria-hidden="true">04</span>
                         <span class="service-num">04 / CAPABILITY</span>
                         <h3>Brand Growth Systems</h3>
                         <p>Complete scale frameworks, funnel architectures, and brand design guidelines tailored for growth.</p>
                     </div>
 
                     <div class="premium-card" id="service5">
+                        <span class="service-bg-num" aria-hidden="true">05</span>
                         <span class="service-num">05 / CAPABILITY</span>
                         <h3>Creative Strategy</h3>
                         <p>Core identity design, copywriting, and market positioning that elevates agencies above the noise.</p>
                     </div>
 
                     <div class="premium-card" id="service6" style="border-style: dashed;">
+                        <span class="service-bg-num" aria-hidden="true" style="opacity:0.025;">06</span>
                         <span class="service-num" style="color:var(--mm-steel);">06 / NEXT</span>
                         <h3 style="color:var(--mm-steel);">Your Project</h3>
                         <p style="color:var(--mm-steel);">Partner with us to engineer high-velocity digital marketing and custom automations.</p>
