@@ -581,7 +581,41 @@ section {
 }
 
 @media (max-width: 768px) {
-    .hero-deco { width: 180px; height: 180px; right: 4%; top: 8%; }
+    .hero-deco { display: none; }
+
+    .hero {
+        min-height: 100svh;
+        padding-top: 100px;
+        padding-bottom: 60px;
+        align-items: flex-start;
+    }
+
+    .hero-title {
+        font-size: clamp(2.6rem, 12vw, 4.5rem);
+        line-height: 0.93;
+        margin-bottom: 1.2rem;
+    }
+
+    .animated-text-wrapper {
+        height: 0.95em;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-actions .btn-premium,
+    .hero-actions .btn-ghost {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
 }
 
 /* =====================================================
@@ -666,10 +700,7 @@ section {
 }
 
 @media (max-width: 768px) {
-    .stats-bar { padding: 48px 0; }
-    .stats-grid { flex-direction: column; gap: 40px; }
-    .stat-divider { width: 80px; height: 2px; }
-    .stat-item { padding: 0; }
+    .stats-bar { display: none; }
 }
 
 /* =====================================================
