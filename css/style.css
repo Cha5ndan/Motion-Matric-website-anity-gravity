@@ -61,7 +61,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     text-transform: uppercase;
-    letter-spacing: 0em;
+    letter-spacing: 0.03em;
     line-height: 0.95;
 }
 
@@ -264,7 +264,7 @@ section {
     font-size: clamp(2.8rem, 5.5vw, 4.2rem);
     margin-bottom: var(--space-sm);
     text-transform: uppercase;
-    letter-spacing: 0;
+    letter-spacing: 0.03em;
 }
 
 .section-desc {
@@ -499,7 +499,7 @@ section {
     margin-bottom: var(--space-md);
     line-height: 0.9;
     text-transform: uppercase;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.02em;
 }
 
 .hero-subtitle {

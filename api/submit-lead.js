@@ -11,7 +11,7 @@ const resendApiKey = process.env.RESEND_API_KEY;
 const resend = new Resend(resendApiKey);
 
 // Target notification email
-const OWNER_EMAIL = 'hello@motionmatrix.studio';
+const OWNER_EMAIL = 'chandan@motionmatrix.studio';
 
 module.exports = async (req, res) => {
   // Allow CORS from local development
